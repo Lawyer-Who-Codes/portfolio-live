@@ -1,0 +1,170 @@
+body{
+    background-color: #E5E5E5;
+}
+
+.section--1{
+    background-color: #FFF;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.section--2{
+    background-color: #E5E5E5;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.navigation-bar{
+    background-color: #1F2428;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link{
+    color: #FFF;
+}
+
+.hero{
+    background-color: #1F2428;
+    min-height: 70vh;
+    color: #FFF;
+
+}
+
+#profile_pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero--content{
+    width: 1350px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.hero--content--intro{
+    display: flex;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 3em;
+    
+    
+}
+
+.intro--name{
+    font-size: 100px;
+    
+}
+
+.description{
+    font-size: 60px;
+}
+
+.slogan{
+    font-size: 24px;
+    margin-top: 1em;
+}
+
+.hero--content--subsection{
+    text-align: center;
+    padding: 2em;
+    font-weight: 600;
+}
+
+.project--body{
+    background-color: #FFF;
+    padding: 1em;
+    
+}
+
+.project--thumbnail{
+    width: 100%;
+    
+}
+
+.projects--wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 4em;
+    gap: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.me--try{
+    margin-left: 9.5em;
+    margin-bottom: 5em;
+    padding-top: 2em;
+    padding-bottom: 5em;
+    font-size: 1em;
+    text-align: justify;
+}
+
+.more--me{
+    margin-left: 0.1em;
+    margin-top: 3em;
+    font-weight: 1000;
+}
+
+.describe--me{
+    font-style: normal;
+}
+
+.skills--container{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.skill--wrapper{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.other--skills--wrapper{
+    display: flex;
+    gap: 1em;
+}
+
+.skill--tag{
+    background-color: #C4E7F2;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 10px;
+
+}
+
+.project--image{
+    max-width: 800px;
+}
+
+@media (max-width:900px){
+    .hero--content--intro{
+        flex-direction: column;
+    }
+
+    .projects--wrapper{
+        
+        grid-template-columns: 1fr ;
+   
+    }
+}
+
+@media (max-width:800px){
+    .hero--content{
+        width: 100%;
+    }
+}
+
+@media (max-width:600px){
+    .skills--container{
+        width: 100%;
+    }
+}

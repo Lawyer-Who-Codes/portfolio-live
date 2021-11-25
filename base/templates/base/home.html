@@ -1,0 +1,85 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="hero">
+        <div class="hero--content">
+            <div class="hero--content--intro"> 
+                <img id="profile_pic" src="{% static 'images/Portrait.png' %}">
+                <h1 class="intro--name">Priscilla <br> Chataika</h1>   
+            </div>
+
+            <div class="hero--content--subsection">
+
+                 <h3 class="description" >FullStack Developer</h3>
+                 <p class="slogan" >I'm a lawyer who develops apps for law firms and Dapps on the Ethereum blockchain. <br> +27 76 167 1217</p>
+            </div>
+        </div>
+       
+    </section>
+
+    <section class="container section--2">
+
+    <div class="me--try">
+    <h3>MY PROJECTS</h3>
+    <p>Projects that make my journey worthwhile</p>
+        <div class="projects--wrapper">
+
+
+            {% for project in projects %}
+            <div class="project--column">
+                <a href="{% url 'project' project.id %}">
+                    <img class="project--thumbnail" src="{{project.thumbnail.url}}">
+                </a>
+                <div class="project--body">
+                    <h5>{{project.title}}</h5>
+                </div>  
+            </div>
+            {% empty %}
+
+            <h3>There are no projects in the database...</h3>
+            {% endfor %}
+    </div>
+   
+    <div class="more--me">
+    <h3>More About Me</h3>
+</div>
+    <div class="describe--me">
+    <p>I’m an Attorney and software developer interested in all things legal technology and DApps on the Ethereum blockchain.</p>
+
+    <p>I’m proficient in Python, Django, Go, JavaScript, TypeScript, SQL and most importantly R.</p>
+        
+    <p>In my spare time I love reading about Finance and self-development. That said, I hope to one day do an MBA and an MFinTech.</p>
+</div>
+       
+    </section>
+
+    <section class="section--1">
+        <div class="skills--container">
+            <h3>Skills</h3>
+
+            {% for skill in detailedSkills %}
+            <div class="skill--wrapper">
+                <h5>{{skill.title}}</h5>
+                <p>{{skill.body}}</p>
+            </div>
+            {% endfor %}
+
+              
+            <h3>Other Skills</h3>
+            <div class="other--skills--wrapper">
+                {% for skill in skills %}
+                <div class="skill--tag">
+                    <span>{{skill.title}}</span>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+  
+</section>
+<Center>Copyright 2021</Center>
+<footer class="container-fluid">
+</footer>
+{% endblock content %}
