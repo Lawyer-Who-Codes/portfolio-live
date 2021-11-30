@@ -20,32 +20,29 @@
 
     <section class="container section--2">
 
-    <div class="me--try">
+
     <h3>MY PROJECTS</h3>
     <p>Projects that make my journey worthwhile</p>
-        <div class="projects--wrapper">
+    <div class="projects--wrapper">
 
+        {% for project in projects %}
+        <div class="project--column">
+            <a href="{% url 'project' project.id %}">
+                <img class="project--thumbnail" src="{{project.thumbnail.url}}">
+            </a>
+            <div class="project--body">
+                <h5>{{project.title}}</h5>
+            </div>  
+        </div>
+        {% empty %}
 
-            {% for project in projects %}
-            <div class="project--column">
-                <a href="{% url 'project' project.id %}">
-                    <img class="project--thumbnail" src="{{project.thumbnail.url}}">
-                </a>
-                <div class="project--body">
-                    <h5>{{project.title}}</h5>
-                </div>  
-            </div>
-            {% empty %}
-
-            <h3>There are no projects in the database...</h3>
-            {% endfor %}
-    </div>
+        <h3>There are no projects in the database...</h3> {% endfor %} </div>
    
-    <div class="more--me">
-    <h3>More About Me</h3>
+        <div class="more--me">
+            <h3>More About Me</h3>
 </div>
     <div class="describe--me">
-    <p>I’m an Attorney and software developer interested in all things legal technology and DApps on the Ethereum blockchain.</p>
+    <p>I’m a lawyer and software developer interested in all things legal technology and DApps on the Ethereum blockchain.</p>
 
     <p>I’m proficient in Python, Django, Go, JavaScript, TypeScript, SQL and most importantly R.</p>
         
@@ -66,7 +63,7 @@
             {% endfor %}
 
               
-            <h3>Other Skills</h3>
+            <h4>Other Skills</h4>
             <div class="other--skills--wrapper">
                 {% for skill in skills %}
                 <div class="skill--tag">
@@ -79,11 +76,28 @@
 
   
 </section>
-<Center>Copyright 2021</Center>
-<footer class="container-fluid">
-</footer>
+
 
 <section class="section--2">
+    <div class="skills--container">
+        <h3>Endorsements</h3>
+        <a class="btn btn-primary my-3" href="{% url 'add-endorsement' %}">Add Endorsement</a>
+
+        {% for i in endorsements %}
+        <div style="margin-bottom: 2em;" class="card">
+            <div class="card-body">
+                <h5>{{i.name}}</h5>
+                <p>{{i.body}}</p>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+
+
+</section>
+
+<section class="section--1">
     <div class="container">
         <form class="contact--form" method="POST">
             {% csrf_token %}
@@ -100,5 +114,8 @@
         </form>
     </div>
 </section>
-
+<Center>Copyright 2021</Center>
+<footer class="container-fluid">
+</footer>
 {% endblock content %}
+
