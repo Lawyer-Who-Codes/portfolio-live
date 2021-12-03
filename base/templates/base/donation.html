@@ -1,0 +1,35 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .donation--wrapper{
+        margin: 0 auto;
+    }
+</style>
+<div class="container">
+
+    <div style="width: 300px;" class="card my-3 donation--wrapper">
+        <div class="card-body">
+            <h3>Buy me a coffee :)</h3>
+           
+            <p>If I helped you in any way, would you consider donating $5?</p>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+    
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=AWPE4rclOf5bCO3L0Y77JJiT2fWxttnb6zRvBweuqeByF0DNBvrnTDb1fhIWpLPAjvdusSq6jFZbQPKk"></script>
+<script>
+    // Render the Paypal button into #paypal-button-container
+    paypal.Buttons({
+
+        style: {
+            color: 'blue',
+            shape: 'rect',
+            label: 'pay',
+            height: 40
+        }
+    }).render('#paypal-button-container');
+</script>
+{% endblock content %}
